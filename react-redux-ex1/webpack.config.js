@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const merge = require("webpack-merge");
 
 const { environment, projectPath } = require("./parts/constant");
@@ -18,7 +19,7 @@ module.exports = env => {
     resolve: { extensions: ['.js', '.jsx'] },
     output: {
       filename: "[name].js",
-      publicPath: `dist/${env}/` // Webpack dev middleware, if enabled, handles requests for this URL prefix
+      publicPath: `dist/` // Webpack dev middleware, if enabled, handles requests for this URL prefix
     },
     module: {
       rules: [
@@ -43,15 +44,16 @@ module.exports = env => {
   });
 
   // Configuration for client-side bundle suitable for running in browsers
-  const clientBundleOutputDir = path.join(projectPath.clientOutputPath, env);
+  const clientBundleOutputDir = projectPath.clientOutputPath;
   const clientBundleConfig = merge(sharedConfig(), {
-    entry: entry(env).client,
+    entry: entry.client,
     module: {
       rules: [
         {
           test: /\.s?[ac]ss$/,
           use: [
-            isDevBuild ? "style-loader" : MiniCssExtractPlugin.loader,
+            "style-loader",
+            MiniCssExtractPlugin.loader,
             "css-loader",
             "sass-loader"
           ]
@@ -81,7 +83,9 @@ module.exports = env => {
               ) // Point sourcemap entries to the original file locations on disk
             })
           ]
-        : []
+        : [
+          new OptimizeCSSAssetsPlugin()
+        ]
     )
   });
 
