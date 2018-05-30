@@ -7,7 +7,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 const { environment, projectPath } = require("./parts/constant");
 
-let pathsToClean = ["dist/client/*.*"];
+let pathsToClean = ["dist/client/*"];
 
 let cleanOptions = {
   root: path.resolve(__dirname, "."),
@@ -27,7 +27,7 @@ module.exports = env => {
     module: {
       rules: [
         {
-          test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/,
+          test: /\.(png|woff|woff2|eot|ttf)(\?|$)/,
           use: [
             {
               loader: "url-loader",

@@ -8,6 +8,7 @@ const { environment, projectPath } = require("./parts/constant");
 const entry = require("./parts/entry");
 
 const vendorFileName = "vendor-manifest.json";
+console.log(path.resolve(__dirname, "./dist/client/images"))
 
 module.exports = env => {
   env = environment[env] || environment.development;
@@ -16,7 +17,7 @@ module.exports = env => {
   const sharedConfig = () => ({
     mode: env,
     stats: { modules: false },
-    resolve: { extensions: ['.js', '.jsx'] },
+    resolve: { extensions: [".js", ".jsx"] },
     output: {
       filename: "[name].js",
       publicPath: `dist/` // Webpack dev middleware, if enabled, handles requests for this URL prefix
@@ -34,7 +35,10 @@ module.exports = env => {
             {
               loader: "url-loader",
               options: {
-                limit: 8192
+                limit: 8192,
+                name: "[name].[ext]",
+                outputPath: "images/",
+                publicPath: "images/"
               }
             }
           ]
@@ -83,9 +87,7 @@ module.exports = env => {
               ) // Point sourcemap entries to the original file locations on disk
             })
           ]
-        : [
-          new OptimizeCSSAssetsPlugin()
-        ]
+        : [new OptimizeCSSAssetsPlugin()]
     )
   });
 

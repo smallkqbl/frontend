@@ -1,1 +1,309 @@
-!function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{configurable:!1,enumerable:!0,get:r})},n.r=function(e){Object.defineProperty(e,"__esModule",{value:!0})},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="dist/",n(n.s=24)}([function(e,t){e.exports=vendor_f0a45f14f0f798799c0d},function(e,t,n){e.exports=n(0)(1)},function(e,t,n){e.exports=n(0)(22)},function(e,t,n){e.exports=n(0)(34)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=a(n(16)),u=a(n(15));function a(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}t.default=r({},o,u)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.TOGGLE_SAMPLE="TOGGLE_SAMPLE"},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(e,t){return function(){var n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:e,r=arguments[1];return t.hasOwnProperty(r.type)?t[r.type](n,r):n}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.ADD_SAMPLE="ADD_SAMPLE",t.GET_SAMPLE="GET_SAMPLE"},function(e,t,n){e.exports=n(0)(42)},,,,,,function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=n(1),u=l(o),a=n(3),i=n(2),c=l(n(4));function l(e){return e&&e.__esModule?e:{default:e}}var f=function(e){function t(e){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.Component),r(t,[{key:"render",value:function(){return u.default.createElement("div",{className:"content-container",style:{display:this.props.isChecked?"block":"none"}},u.default.createElement("p",null,"Sample Data"),u.default.createElement("ul",{className:"sample-list"},this.props.sampleList.map(function(e,t){return u.default.createElement("li",{key:t},e)})))}}]),t}();t.default=(0,a.connect)(function(e){return Object.assign({},{isChecked:e.isChecked,sampleList:e.sampleList})},function(e){var t=c.default.addSample;return(0,i.bindActionCreators)({addSample:t},e)})(f)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.addSample=void 0;var r=n(7);t.addSample=function(e){return{type:r.ADD_SAMPLE,data:e}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.toggleSample=void 0;var r=n(5);t.toggleSample=function(e){return{type:r.TOGGLE_SAMPLE,data:e}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=n(1),u=l(o),a=n(3),i=n(2),c=l(n(4));function l(e){return e&&e.__esModule?e:{default:e}}var f=function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var n=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return n.onCheckBoxChange=function(){var e=!n.props.isChecked;n.props.toggleSample(e)},n.addSample=function(){var e=[].concat(function(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}(n.props.sampleList),["sample "+ ++n.props.sampleList.length]);n.props.addSample(e)},n}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.Component),r(t,[{key:"render",value:function(){return u.default.createElement("div",{className:"filter-container"},u.default.createElement("div",null,u.default.createElement("label",null,u.default.createElement("input",{type:"checkbox",checked:this.props.isChecked,onChange:this.onCheckBoxChange}),"Toggle Samle"),u.default.createElement("button",{type:"button",onClick:this.addSample},"Add Sample")))}}]),t}();t.default=(0,a.connect)(function(e){return Object.assign({},{isChecked:e.isChecked,sampleList:e.sampleList})},function(e){return(0,i.bindActionCreators)(c.default,e)})(f)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=n(1),u=a(o);a(n(8));function a(e){return e&&e.__esModule?e:{default:e}}var i=function(e){function t(e){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.Component),r(t,[{key:"render",value:function(){return u.default.createElement("div",{id:"container",className:"container main-container"},this.props.children)}}]),t}();t.default=i},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=n(1),u=f(o),a=n(3),i=f(n(18)),c=f(n(17)),l=f(n(14));function f(e){return e&&e.__esModule?e:{default:e}}var s=function(e){function t(e){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.Component),r(t,[{key:"render",value:function(){return u.default.createElement(i.default,null,u.default.createElement(c.default,null),u.default.createElement(l.default,null))}}]),t}();t.default=(0,a.connect)()(s)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.isChecked=void 0;var r,o=n(6),u=(r=o)&&r.__esModule?r:{default:r},a=n(5);t.isChecked=(0,u.default)({},function(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}({},a.TOGGLE_SAMPLE,function(e,t){return t.data}))},function(e,t,n){"use strict";var r;Object.defineProperty(t,"__esModule",{value:!0}),t.sampleList=void 0;var o,u=n(7),a=n(6),i=(o=a)&&o.__esModule?o:{default:o};function c(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}t.sampleList=(0,i.default)({},(c(r={},u.GET_SAMPLE,function(e,t){return t.data}),c(r,u.ADD_SAMPLE,function(e,t){return t.data}),r))},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=n(2),u=i(n(21)),a=i(n(20));function i(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}t.default=(0,o.combineReducers)(r({},u,a))},function(e,t,n){e.exports=n(0)(29)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=s(n(1)),u=s(n(8)),a=n(3),i=n(2),c=s(n(23)),l=s(n(22)),f=s(n(19));function s(e){return e&&e.__esModule?e:{default:e}}var p=Object.assign({},{sampleList:["sample 1","sample 2","sample 3"],isChecked:!1});var d,b,y=(d=p,b=(0,i.compose)((0,i.applyMiddleware)(c.default)),(0,i.createStore)(l.default,d,b)),_=function(e){function t(e){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){return o.default.createElement(a.Provider,{store:y},o.default.createElement(f.default,null))}}]),t}();t.default=_,u.default.render(o.default.createElement(_,null),document.getElementById("app-container"))}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "dist/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./source/js/pages/sample/components/index.jsx");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./node_modules/react-dom/index.js":
+/*!**************************************************************************************************!*\
+  !*** delegated ./node_modules/react-dom/index.js from dll-reference vendor_655e37639f54827ed45c ***!
+  \**************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = (__webpack_require__(/*! dll-reference vendor_655e37639f54827ed45c */ \"dll-reference vendor_655e37639f54827ed45c\"))(\"./node_modules/react-dom/index.js\");\n\n//# sourceURL=webpack:///delegated_./node_modules/react-dom/index.js_from_dll-reference_vendor_655e37639f54827ed45c?");
+
+/***/ }),
+
+/***/ "./node_modules/react-redux/es/index.js":
+/*!*******************************************************************************************************!*\
+  !*** delegated ./node_modules/react-redux/es/index.js from dll-reference vendor_655e37639f54827ed45c ***!
+  \*******************************************************************************************************/
+/*! exports provided: Provider, createProvider, connectAdvanced, connect */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = (__webpack_require__(/*! dll-reference vendor_655e37639f54827ed45c */ \"dll-reference vendor_655e37639f54827ed45c\"))(\"./node_modules/react-redux/es/index.js\");\n\n//# sourceURL=webpack:///delegated_./node_modules/react-redux/es/index.js_from_dll-reference_vendor_655e37639f54827ed45c?");
+
+/***/ }),
+
+/***/ "./node_modules/react/index.js":
+/*!**********************************************************************************************!*\
+  !*** delegated ./node_modules/react/index.js from dll-reference vendor_655e37639f54827ed45c ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = (__webpack_require__(/*! dll-reference vendor_655e37639f54827ed45c */ \"dll-reference vendor_655e37639f54827ed45c\"))(\"./node_modules/react/index.js\");\n\n//# sourceURL=webpack:///delegated_./node_modules/react/index.js_from_dll-reference_vendor_655e37639f54827ed45c?");
+
+/***/ }),
+
+/***/ "./node_modules/redux-thunk/lib/index.js":
+/*!********************************************************************************************************!*\
+  !*** delegated ./node_modules/redux-thunk/lib/index.js from dll-reference vendor_655e37639f54827ed45c ***!
+  \********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = (__webpack_require__(/*! dll-reference vendor_655e37639f54827ed45c */ \"dll-reference vendor_655e37639f54827ed45c\"))(\"./node_modules/redux-thunk/lib/index.js\");\n\n//# sourceURL=webpack:///delegated_./node_modules/redux-thunk/lib/index.js_from_dll-reference_vendor_655e37639f54827ed45c?");
+
+/***/ }),
+
+/***/ "./node_modules/redux/es/redux.js":
+/*!*************************************************************************************************!*\
+  !*** delegated ./node_modules/redux/es/redux.js from dll-reference vendor_655e37639f54827ed45c ***!
+  \*************************************************************************************************/
+/*! exports provided: createStore, combineReducers, bindActionCreators, applyMiddleware, compose, __DO_NOT_USE__ActionTypes */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = (__webpack_require__(/*! dll-reference vendor_655e37639f54827ed45c */ \"dll-reference vendor_655e37639f54827ed45c\"))(\"./node_modules/redux/es/redux.js\");\n\n//# sourceURL=webpack:///delegated_./node_modules/redux/es/redux.js_from_dll-reference_vendor_655e37639f54827ed45c?");
+
+/***/ }),
+
+/***/ "./source/js/actions/sampleAction.js":
+/*!*******************************************!*\
+  !*** ./source/js/actions/sampleAction.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.addSample = undefined;\n\nvar _types = __webpack_require__(/*! ./types */ \"./source/js/actions/types.js\");\n\nvar addSample = exports.addSample = function addSample(data) {\n    return {\n        type: _types.ADD_SAMPLE,\n        data: data\n    };\n};\n\n//# sourceURL=webpack:///./source/js/actions/sampleAction.js?");
+
+/***/ }),
+
+/***/ "./source/js/actions/types.js":
+/*!************************************!*\
+  !*** ./source/js/actions/types.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n/* Sample */\nvar ADD_SAMPLE = exports.ADD_SAMPLE = \"ADD_SAMPLE\";\nvar GET_SAMPLE = exports.GET_SAMPLE = \"GET_SAMPLE\";\n\n//# sourceURL=webpack:///./source/js/actions/types.js?");
+
+/***/ }),
+
+/***/ "./source/js/layouts/AppLayout.jsx":
+/*!*****************************************!*\
+  !*** ./source/js/layouts/AppLayout.jsx ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar AppLayout = function (_Component) {\n  _inherits(AppLayout, _Component);\n\n  function AppLayout(props) {\n    _classCallCheck(this, AppLayout);\n\n    return _possibleConstructorReturn(this, (AppLayout.__proto__ || Object.getPrototypeOf(AppLayout)).call(this, props));\n  }\n\n  _createClass(AppLayout, [{\n    key: 'render',\n    value: function render() {\n      return _react2.default.createElement(\n        'div',\n        { id: 'container', className: 'container main-container' },\n        this.props.children\n      );\n    }\n  }]);\n\n  return AppLayout;\n}(_react.Component);\n\nexports.default = AppLayout;\n\n//# sourceURL=webpack:///./source/js/layouts/AppLayout.jsx?");
+
+/***/ }),
+
+/***/ "./source/js/modules/createReducer.js":
+/*!********************************************!*\
+  !*** ./source/js/modules/createReducer.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.default = createReducer;\nfunction createReducer(initialState, handlers) {\n    return function reducer() {\n        var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;\n        var action = arguments[1];\n\n        if (handlers.hasOwnProperty(action.type)) {\n            return handlers[action.type](state, action);\n        } else {\n            return state;\n        }\n    };\n}\n\n//# sourceURL=webpack:///./source/js/modules/createReducer.js?");
+
+/***/ }),
+
+/***/ "./source/js/pages/sample/actions/filterAction.js":
+/*!********************************************************!*\
+  !*** ./source/js/pages/sample/actions/filterAction.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.toggleSample = undefined;\n\nvar _types = __webpack_require__(/*! ./types */ \"./source/js/pages/sample/actions/types.js\");\n\nvar toggleSample = exports.toggleSample = function toggleSample(data) {\n  return {\n    type: _types.TOGGLE_SAMPLE,\n    data: data\n  };\n};\n\n//# sourceURL=webpack:///./source/js/pages/sample/actions/filterAction.js?");
+
+/***/ }),
+
+/***/ "./source/js/pages/sample/actions/index.js":
+/*!*************************************************!*\
+  !*** ./source/js/pages/sample/actions/index.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _filterAction = __webpack_require__(/*! ./filterAction */ \"./source/js/pages/sample/actions/filterAction.js\");\n\nvar filterAction = _interopRequireWildcard(_filterAction);\n\nvar _sampleAction = __webpack_require__(/*! ../../../actions/sampleAction */ \"./source/js/actions/sampleAction.js\");\n\nvar sampleAction = _interopRequireWildcard(_sampleAction);\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }\n\nexports.default = _extends({}, filterAction, sampleAction);\n\n//# sourceURL=webpack:///./source/js/pages/sample/actions/index.js?");
+
+/***/ }),
+
+/***/ "./source/js/pages/sample/actions/types.js":
+/*!*************************************************!*\
+  !*** ./source/js/pages/sample/actions/types.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nvar TOGGLE_SAMPLE = exports.TOGGLE_SAMPLE = 'TOGGLE_SAMPLE';\n\n//# sourceURL=webpack:///./source/js/pages/sample/actions/types.js?");
+
+/***/ }),
+
+/***/ "./source/js/pages/sample/components/AppContainer.jsx":
+/*!************************************************************!*\
+  !*** ./source/js/pages/sample/components/AppContainer.jsx ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _AppLayout = __webpack_require__(/*! ../../../layouts/AppLayout */ \"./source/js/layouts/AppLayout.jsx\");\n\nvar _AppLayout2 = _interopRequireDefault(_AppLayout);\n\nvar _Filter = __webpack_require__(/*! ./Filter */ \"./source/js/pages/sample/components/Filter.jsx\");\n\nvar _Filter2 = _interopRequireDefault(_Filter);\n\nvar _Content = __webpack_require__(/*! ./Content */ \"./source/js/pages/sample/components/Content.jsx\");\n\nvar _Content2 = _interopRequireDefault(_Content);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar AppContainer = function (_Component) {\n  _inherits(AppContainer, _Component);\n\n  function AppContainer(props) {\n    _classCallCheck(this, AppContainer);\n\n    return _possibleConstructorReturn(this, (AppContainer.__proto__ || Object.getPrototypeOf(AppContainer)).call(this, props));\n  }\n\n  _createClass(AppContainer, [{\n    key: \"render\",\n    value: function render() {\n      return _react2.default.createElement(\n        _AppLayout2.default,\n        null,\n        _react2.default.createElement(_Filter2.default, null),\n        _react2.default.createElement(_Content2.default, null)\n      );\n    }\n  }]);\n\n  return AppContainer;\n}(_react.Component);\n\nexports.default = (0, _reactRedux.connect)()(AppContainer);\n\n//# sourceURL=webpack:///./source/js/pages/sample/components/AppContainer.jsx?");
+
+/***/ }),
+
+/***/ "./source/js/pages/sample/components/Content.jsx":
+/*!*******************************************************!*\
+  !*** ./source/js/pages/sample/components/Content.jsx ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _redux = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n\nvar _actions = __webpack_require__(/*! ../actions */ \"./source/js/pages/sample/actions/index.js\");\n\nvar _actions2 = _interopRequireDefault(_actions);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar Content = function (_Component) {\n  _inherits(Content, _Component);\n\n  function Content(props) {\n    _classCallCheck(this, Content);\n\n    return _possibleConstructorReturn(this, (Content.__proto__ || Object.getPrototypeOf(Content)).call(this, props));\n  }\n\n  _createClass(Content, [{\n    key: \"render\",\n    value: function render() {\n      return _react2.default.createElement(\n        \"div\",\n        {\n          className: \"content-container\",\n          style: { display: this.props.isChecked ? \"block\" : \"none\" }\n        },\n        _react2.default.createElement(\n          \"p\",\n          null,\n          \"Sample Data\"\n        ),\n        _react2.default.createElement(\n          \"ul\",\n          { className: \"sample-list\" },\n          this.props.sampleList.map(function (item, i) {\n            return _react2.default.createElement(\n              \"li\",\n              { key: i },\n              item\n            );\n          })\n        )\n      );\n    }\n  }]);\n\n  return Content;\n}(_react.Component);\n\nfunction mapStateToProps(state) {\n  return Object.assign({}, {\n    isChecked: state.isChecked,\n    sampleList: state.sampleList\n  });\n}\n\nfunction mapDispatchToProps(dispatch) {\n  var addSample = _actions2.default.addSample;\n\n  return (0, _redux.bindActionCreators)({ addSample: addSample }, dispatch);\n}\n\nexports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Content);\n\n//# sourceURL=webpack:///./source/js/pages/sample/components/Content.jsx?");
+
+/***/ }),
+
+/***/ "./source/js/pages/sample/components/Filter.jsx":
+/*!******************************************************!*\
+  !*** ./source/js/pages/sample/components/Filter.jsx ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _redux = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n\nvar _actions = __webpack_require__(/*! ../actions */ \"./source/js/pages/sample/actions/index.js\");\n\nvar _actions2 = _interopRequireDefault(_actions);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar Filter = function (_Component) {\n  _inherits(Filter, _Component);\n\n  function Filter(props) {\n    _classCallCheck(this, Filter);\n\n    var _this = _possibleConstructorReturn(this, (Filter.__proto__ || Object.getPrototypeOf(Filter)).call(this, props));\n\n    _this.onCheckBoxChange = function () {\n      var newState = !_this.props.isChecked;\n      _this.props.toggleSample(newState);\n    };\n\n    _this.addSample = function () {\n      var newSampleList = [].concat(_toConsumableArray(_this.props.sampleList), [\"sample \" + ++_this.props.sampleList.length]);\n      //console.log(newSampleList);\n      _this.props.addSample(newSampleList);\n    };\n\n    return _this;\n  }\n\n  _createClass(Filter, [{\n    key: \"render\",\n    value: function render() {\n      return _react2.default.createElement(\n        \"div\",\n        { className: \"filter-container\" },\n        _react2.default.createElement(\n          \"div\",\n          null,\n          _react2.default.createElement(\n            \"label\",\n            null,\n            _react2.default.createElement(\"input\", {\n              type: \"checkbox\",\n              checked: this.props.isChecked,\n              onChange: this.onCheckBoxChange\n            }),\n            \"Toggle Samle\"\n          ),\n          _react2.default.createElement(\n            \"button\",\n            { type: \"button\", onClick: this.addSample },\n            \"Add Sample\"\n          )\n        )\n      );\n    }\n  }]);\n\n  return Filter;\n}(_react.Component);\n\nfunction mapDispatchToProps(dispatch) {\n  return (0, _redux.bindActionCreators)(_actions2.default, dispatch);\n}\n\nfunction mapStateToProps(state) {\n  return Object.assign({}, { isChecked: state.isChecked, sampleList: state.sampleList });\n}\n\nexports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Filter);\n\n//# sourceURL=webpack:///./source/js/pages/sample/components/Filter.jsx?");
+
+/***/ }),
+
+/***/ "./source/js/pages/sample/components/index.jsx":
+/*!*****************************************************!*\
+  !*** ./source/js/pages/sample/components/index.jsx ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _redux = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n\nvar _reduxThunk = __webpack_require__(/*! redux-thunk */ \"./node_modules/redux-thunk/lib/index.js\");\n\nvar _reduxThunk2 = _interopRequireDefault(_reduxThunk);\n\nvar _reducers = __webpack_require__(/*! ../reducers */ \"./source/js/pages/sample/reducers/index.js\");\n\nvar _reducers2 = _interopRequireDefault(_reducers);\n\nvar _AppContainer = __webpack_require__(/*! ./AppContainer */ \"./source/js/pages/sample/components/AppContainer.jsx\");\n\nvar _AppContainer2 = _interopRequireDefault(_AppContainer);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar defaultState = Object.assign({}, {\n  sampleList: [\"sample 1\", \"sample 2\", \"sample 3\"],\n  isChecked: false\n});\n\nfunction configureStore(initialState) {\n  var enhancer = (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxThunk2.default // lets us dispatch() functions\n  ));\n\n  return (0, _redux.createStore)(_reducers2.default, initialState, enhancer);\n}\n\nvar store = configureStore(defaultState);\n\nvar App = function (_React$Component) {\n  _inherits(App, _React$Component);\n\n  function App(props) {\n    _classCallCheck(this, App);\n\n    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));\n  }\n\n  _createClass(App, [{\n    key: \"render\",\n    value: function render() {\n      return _react2.default.createElement(\n        _reactRedux.Provider,\n        { store: store },\n        _react2.default.createElement(_AppContainer2.default, null)\n      );\n    }\n  }]);\n\n  return App;\n}(_react2.default.Component);\n\nexports.default = App;\n\n\n_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById(\"app-container\"));\n\n//# sourceURL=webpack:///./source/js/pages/sample/components/index.jsx?");
+
+/***/ }),
+
+/***/ "./source/js/pages/sample/reducers/filterReducer.js":
+/*!**********************************************************!*\
+  !*** ./source/js/pages/sample/reducers/filterReducer.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.isChecked = undefined;\n\nvar _createReducer2 = __webpack_require__(/*! ../../../modules/createReducer */ \"./source/js/modules/createReducer.js\");\n\nvar _createReducer3 = _interopRequireDefault(_createReducer2);\n\nvar _types = __webpack_require__(/*! ../actions/types */ \"./source/js/pages/sample/actions/types.js\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nvar isChecked = exports.isChecked = (0, _createReducer3.default)({}, _defineProperty({}, _types.TOGGLE_SAMPLE, function (state, action) {\n  return action.data;\n}));\n\n//# sourceURL=webpack:///./source/js/pages/sample/reducers/filterReducer.js?");
+
+/***/ }),
+
+/***/ "./source/js/pages/sample/reducers/index.js":
+/*!**************************************************!*\
+  !*** ./source/js/pages/sample/reducers/index.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _redux = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n\nvar _sampleReducer = __webpack_require__(/*! ../../../reducers/sampleReducer */ \"./source/js/reducers/sampleReducer.js\");\n\nvar sampleReducer = _interopRequireWildcard(_sampleReducer);\n\nvar _filterReducer = __webpack_require__(/*! ./filterReducer */ \"./source/js/pages/sample/reducers/filterReducer.js\");\n\nvar filterReducer = _interopRequireWildcard(_filterReducer);\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }\n\nexports.default = (0, _redux.combineReducers)(_extends({}, sampleReducer, filterReducer));\n\n//# sourceURL=webpack:///./source/js/pages/sample/reducers/index.js?");
+
+/***/ }),
+
+/***/ "./source/js/reducers/sampleReducer.js":
+/*!*********************************************!*\
+  !*** ./source/js/reducers/sampleReducer.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.sampleList = undefined;\n\nvar _createReducer;\n\nvar _types = __webpack_require__(/*! ../actions/types */ \"./source/js/actions/types.js\");\n\nvar _createReducer2 = __webpack_require__(/*! ../modules/createReducer.js */ \"./source/js/modules/createReducer.js\");\n\nvar _createReducer3 = _interopRequireDefault(_createReducer2);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nvar sampleList = exports.sampleList = (0, _createReducer3.default)({}, (_createReducer = {}, _defineProperty(_createReducer, _types.GET_SAMPLE, function (state, action) {\n  return action.data;\n}), _defineProperty(_createReducer, _types.ADD_SAMPLE, function (state, action) {\n  return action.data;\n}), _createReducer));\n\n//# sourceURL=webpack:///./source/js/reducers/sampleReducer.js?");
+
+/***/ }),
+
+/***/ "dll-reference vendor_655e37639f54827ed45c":
+/*!**********************************************!*\
+  !*** external "vendor_655e37639f54827ed45c" ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = vendor_655e37639f54827ed45c;\n\n//# sourceURL=webpack:///external_%22vendor_655e37639f54827ed45c%22?");
+
+/***/ })
+
+/******/ });
+//# sourceMappingURL=sample.js.map
