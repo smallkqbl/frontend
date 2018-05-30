@@ -10,7 +10,7 @@
     "build:app:pro": "node node_modules/webpack/bin/webpack.js --config webpack.config.js --env=production",
     "build:all:dev": "node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js && node node_modules/webpack/bin/webpack.js --config webpack.config.js",
     "build:all:pro": "node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env=production && node node_modules/webpack/bin/webpack.js --config webpack.config.js --env=production",
-    "start:dev": "node_modules/.bin/webpack-dev-server --hot --inline --progress --watch-content-base --open --env=development"
+    "start:dev": "node_modules/.bin/webpack-dev-server --config webpack.config.dev.js --hot --inline --progress --watch-content-base --open"
   },
   "author": "",
   "dependencies": {

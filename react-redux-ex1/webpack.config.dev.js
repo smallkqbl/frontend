@@ -7,15 +7,11 @@ const config = require("./webpack.config");
 
 const devConfig = config(environment.development)[0];
 devConfig.devServer = {
-  contentBase: path.join(__dirname, "./"),
-  compress: true,
   port: 9000,
   hot: true,
-  watchContentBase: true
+  watchContentBase: true,
+  publicPath: "/dist/client/"
 };
-devConfig.plugins = [
-  ...devConfig.plugins,
-  new webpack.HotModuleReplacementPlugin()
-];
+
 
 module.exports = devConfig;
