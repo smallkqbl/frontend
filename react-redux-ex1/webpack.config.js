@@ -8,7 +8,6 @@ const { environment, projectPath } = require("./parts/constant");
 const entry = require("./parts/entry");
 
 const vendorFileName = "vendor-manifest.json";
-console.log(path.resolve(__dirname, "./dist/client/images"))
 
 module.exports = env => {
   env = environment[env] || environment.development;
@@ -75,20 +74,8 @@ module.exports = env => {
         context: __dirname,
         manifest: require(`${clientBundleOutputDir}/${vendorFileName}`)
       })
-    ].concat(
-      isDevBuild
-        ? [
-            // Plugins that apply in development builds only
-            new webpack.SourceMapDevToolPlugin({
-              filename: "[file].map", // Remove this line if you prefer inline source maps
-              moduleFilenameTemplate: path.relative(
-                clientBundleOutputDir,
-                "[resourcePath]"
-              ) // Point sourcemap entries to the original file locations on disk
-            })
-          ]
-        : [new OptimizeCSSAssetsPlugin()]
-    )
+    ].concat(!isDevBuild ? [new OptimizeCSSAssetsPlugin()] : []),
+    devtool: isDevBuild ? "source-map" : undefined
   });
 
   return [clientBundleConfig];
