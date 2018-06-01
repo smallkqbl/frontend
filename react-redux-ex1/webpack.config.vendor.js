@@ -41,7 +41,7 @@ module.exports = env => {
     },
     entry: {
       vendor: ["react", "react-dom", "react-redux", "redux", "redux-thunk"],
-      bootstrap: ["./source/style/vendors/bootstrap.min.css"]
+      bootstrap: ["bootstrap/dist/css/bootstrap.css"]
     },
     output: {
       publicPath: `dist/`,
