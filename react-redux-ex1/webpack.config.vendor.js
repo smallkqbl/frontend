@@ -49,7 +49,6 @@ module.exports = env => {
       library: "[name]_[hash]"
     },
     plugins: [
-      new CleanWebpackPlugin(pathsToClean, cleanOptions),
       new webpack.NormalModuleReplacementPlugin(
         /\/iconv-loader$/,
         require.resolve("node-noop")
@@ -58,7 +57,7 @@ module.exports = env => {
         "process.env.NODE_ENV": isDevBuild ? '"development"' : '"production"'
       }),
       new OptimizeCssAssetsPlugin()
-    ]
+    ].concat(isDevBuild ? [] : [new CleanWebpackPlugin(pathsToClean, cleanOptions)])
   };
 
   const clientBundleConfig = merge(sharedConfig, {
